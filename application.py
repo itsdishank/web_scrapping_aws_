@@ -15,8 +15,8 @@ app=application
 def homePage():
     driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
 
-    driver.get("https://www.youtube.com/@PW-Foundation/videos")
-    driver.execute_script("window.scrollBy(0, 10000);")
+    # driver.get("https://www.youtube.com/@PW-Foundation/videos")
+    # driver.execute_script("window.scrollBy(0, 10000);")
     return render_template("index.html")
 
 @app.route('/review',methods=['POST','GET']) # route to show the review comments in a web UI
