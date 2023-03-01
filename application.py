@@ -4,6 +4,8 @@ import requests
 from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen as uReq
 import pymongo
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 
 application = Flask(__name__) # initializing a flask app
 app=application
@@ -11,6 +13,10 @@ app=application
 @app.route('/',methods=['GET'])  # route to display the home page
 @cross_origin()
 def homePage():
+    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+
+    driver.get("https://www.youtube.com/@PW-Foundation/videos")
+    driver.execute_script("window.scrollBy(0, 10000);")
     return render_template("index.html")
 
 @app.route('/review',methods=['POST','GET']) # route to show the review comments in a web UI
