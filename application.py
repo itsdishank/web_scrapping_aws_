@@ -13,7 +13,7 @@ app=application
 @app.route('/',methods=['GET'])  # route to display the home page
 @cross_origin()
 def homePage():
-    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+    # driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
 
     # driver.get("https://www.youtube.com/@PW-Foundation/videos")
     # driver.execute_script("window.scrollBy(0, 10000);")
